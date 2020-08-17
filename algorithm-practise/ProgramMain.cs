@@ -37,6 +37,9 @@ namespace algorithm_practise
 
             Console.WriteLine($"DFS => {graph.HasPathDfs(12, 13)}");
             Console.WriteLine($"BFS => {graph.HasPathBfs(12, 1)}");
+            
+            Console.WriteLine("\n--- Brackets Matching");
+            Console.WriteLine(BracketMatching.IsBalanced("[{{()}}]"));
         }
     }
 }
