@@ -39,7 +39,15 @@ namespace algorithm_practise
             Console.WriteLine($"BFS => {graph.HasPathBfs(12, 1)}");
             
             Console.WriteLine("\n--- Brackets Matching");
-            Console.WriteLine(BracketMatching.IsBalanced("[{{()}}]"));
+            Console.WriteLine(BracketMatching.IsBalanced("{{{}}}"));
+            
+            Console.WriteLine("\n--- Queue using two stacks");
+            var queue = new Queue();
+            Console.WriteLine("Inserting 1, 2, 3");
+            queue.EnQueue(1);
+            queue.EnQueue(2);
+            queue.EnQueue(3);
+            Console.WriteLine($"Dequeue => {queue.DeQueue()}");
         }
     }
 }
