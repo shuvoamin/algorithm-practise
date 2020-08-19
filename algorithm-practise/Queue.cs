@@ -39,7 +39,7 @@ namespace algorithm_practise
   
             // Return top of _s1  
             int x = (int)_s1.Peek();  
-            _s1.Pop();
+            //_s1.Pop();
             
             return x;  
         }  
