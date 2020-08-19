@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace algorithm_practise
 {
-    public class Queue  
+    public class MyQueue  
     {
         private readonly Stack _s1 = new Stack();
         private readonly Stack _s2 = new Stack();  

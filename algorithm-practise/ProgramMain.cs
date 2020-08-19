@@ -42,12 +42,15 @@ namespace algorithm_practise
             Console.WriteLine(BracketMatching.IsBalanced("{{{}}}"));
             
             Console.WriteLine("\n--- Queue using two stacks");
-            var queue = new Queue();
+            var queue = new MyQueue();
             Console.WriteLine("Inserting 1, 2, 3");
             queue.EnQueue(1);
             queue.EnQueue(2);
             queue.EnQueue(3);
             Console.WriteLine($"Dequeue => {queue.DeQueue()}");
+            
+            Console.WriteLine("\n--- Array left rotation");
+            ArrayLeftRotation.PrintArray(ArrayLeftRotation.LeftRotation(arr, 2));
         }
     }
 }
