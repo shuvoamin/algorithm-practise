@@ -51,6 +51,13 @@ namespace algorithm_practise
             
             Console.WriteLine("\n--- Array left rotation");
             ArrayLeftRotation.PrintArray(ArrayLeftRotation.LeftRotation(arr, 2));
+            
+            Console.WriteLine("\n--- Ice cream Parlor Problem");
+
+            foreach (var costIndices in HashAndMap.IceCreamParlorOn2(12, arr))
+            {
+                Console.Write($"{costIndices}, ");
+            }
         }
     }
 }
