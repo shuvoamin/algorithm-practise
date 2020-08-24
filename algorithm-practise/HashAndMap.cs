@@ -26,5 +26,42 @@ namespace algorithm_practise
             return indices.OrderBy(x => x).ToArray();
 
         }
+
+        public static int[] IceCreamParlorLogN(int totalMoney, int[] icecreamPrices)
+        {
+            var boughtIcreamIndexes = new int[2];
+            var lookup = new Dictionary<int, int>();
+
+            for (var i = 0; i < icecreamPrices.Length; i++)
+            {
+                if (icecreamPrices[i] < totalMoney)
+                {
+                    var otherIceCreamPrice = totalMoney - icecreamPrices[i];
+                    if (lookup.ContainsKey(otherIceCreamPrice))
+                    {
+                        //solution found
+                        var indexOfOtherIcecream = lookup[otherIceCreamPrice];
+                        if (indexOfOtherIcecream < i)
+                        {
+                            boughtIcreamIndexes[0] = indexOfOtherIcecream + 1;
+                            boughtIcreamIndexes[1] = i + 1;
+                        }
+                        else
+                        {
+                            boughtIcreamIndexes[0] = i + 1;
+                            boughtIcreamIndexes[1] = indexOfOtherIcecream + 1;
+                        }
+                        break;
+                    }
+                    else
+                    {
+                        if (!lookup.ContainsKey(icecreamPrices[i]))
+                            lookup.Add(icecreamPrices[i], i);
+                    }
+                }
+            }
+
+            return boughtIcreamIndexes;
+        }
     }
 }
