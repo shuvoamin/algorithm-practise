@@ -10,7 +10,7 @@ namespace algorithm_practise
 	
         /* Function to print first smallest 
         and second smallest elements */
-        public static void print2Smallest(int []arr) 
+        public static void Print2Smallest(int []arr) 
         { 
             int first, second, arr_size = arr.Length; 
 

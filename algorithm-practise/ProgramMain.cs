@@ -13,7 +13,7 @@ namespace algorithm_practise
         {
             int[] arr = {12, 13, 1, 10, 34, 11};
 
-            print2Smallest(arr);
+            Print2Smallest(arr);
 
             Console.WriteLine("\n---REVERSING LINKED LIST");
 
@@ -58,6 +58,23 @@ namespace algorithm_practise
             {
                 Console.Write($"{costIndices}, ");
             }
+            
+            Console.WriteLine("\n--- Binary Search Tree");
+            
+            BinarySearchTree tree = new BinarySearchTree(4); 
+            tree.Left = new BinarySearchTree(3); 
+            tree.Right = new BinarySearchTree(5);
+            // tree.Left.Left = new BinarySearchTree(2); 
+            // tree.Left.Right = new BinarySearchTree(6);
+
+            if (BinarySearchTree.IsBinarySearchTree(tree)) 
+            { 
+                Console.WriteLine("IS BST"); 
+            } 
+            else
+            { 
+                Console.WriteLine("Not a BST"); 
+            } 
         }
     }
 }

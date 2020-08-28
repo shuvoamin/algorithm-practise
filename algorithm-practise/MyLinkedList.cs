@@ -2,16 +2,16 @@ using System;
 
 namespace algorithm_practise
 {
-    public class Node
+    public class LinkedListNode
     {
         public int Data;
-        public Node Next;
+        public LinkedListNode Next;
 
-        public Node()
+        public LinkedListNode()
         {
         }
         
-        public Node(int v, Node n)
+        public LinkedListNode(int v, LinkedListNode n)
         {
             Data = v;
             Next = n;
@@ -19,13 +19,13 @@ namespace algorithm_practise
     }
     public class MyLinkedList
     {
-        public bool HasCycle(Node head) 
+        public bool HasCycle(LinkedListNode head) 
         {
             if (head == null)
                 return false;
     
-            Node slow = head; // moves 1 Node at a time
-            Node fast = head; // moves 2 Nodes at a time
+            LinkedListNode slow = head; // moves 1 Node at a time
+            LinkedListNode fast = head; // moves 2 Nodes at a time
     
             while (fast != null && fast.Next != null) 
             {
@@ -40,23 +40,23 @@ namespace algorithm_practise
             return false;
         }
         
-        public Node InsertNth(Node head, int data, int position) {
-            Node newNode = new Node();
-            newNode.Data = data;
+        public LinkedListNode InsertNth(LinkedListNode head, int data, int position) {
+            LinkedListNode newLinkedListNode = new LinkedListNode();
+            newLinkedListNode.Data = data;
             if (position == 0) {
-                newNode.Next = head;
-                return newNode;
+                newLinkedListNode.Next = head;
+                return newLinkedListNode;
             } else {
                 /* Get Node one element before desired position */
-                Node n = head;
+                LinkedListNode n = head;
                 for (int i = 0; i < position - 1; i++)
                 {
                     n = n.Next;
                 }
 
                 /* Insert our new Node */
-                newNode.Next = n.Next;
-                n.Next = newNode;
+                newLinkedListNode.Next = n.Next;
+                n.Next = newLinkedListNode;
 
                 return head;
             }
@@ -64,7 +64,7 @@ namespace algorithm_practise
     }
     public class ReverseLinkedList
     {
-        public static Node ReverseRecursively(Node cell)
+        public static LinkedListNode ReverseRecursively(LinkedListNode cell)
         {
             if (cell == null)
                 return null;
@@ -72,7 +72,7 @@ namespace algorithm_practise
                 return cell;
             else
             {
-                Node second_segment = ReverseRecursively(cell.Next);
+                LinkedListNode second_segment = ReverseRecursively(cell.Next);
                 //cell.next points to the last item in the second segment
                 cell.Next.Next = cell;
                 //the next of cell.next now points to cell
@@ -82,11 +82,11 @@ namespace algorithm_practise
             }
         }
 
-        public static Node ReverseIteratively(Node node)
+        public static LinkedListNode ReverseIteratively(LinkedListNode linkedListNode)
         {
-            Node prev = null;
-            Node current = node;
-            Node next = null;
+            LinkedListNode prev = null;
+            LinkedListNode current = linkedListNode;
+            LinkedListNode next = null;
 
             while (current != null)
             {
@@ -96,12 +96,12 @@ namespace algorithm_practise
                 current = next;
             }
 
-            node = prev;
+            linkedListNode = prev;
 
-            return node;
+            return linkedListNode;
         }
 
-        public static void PrintIteratively(Node cell)
+        public static void PrintIteratively(LinkedListNode cell)
         {
             while (cell != null)
             {
@@ -110,7 +110,7 @@ namespace algorithm_practise
             }
         }
 
-        public static void PrintRecursively(Node cell)
+        public static void PrintRecursively(LinkedListNode cell)
         {
             if (cell != null)
             {
@@ -119,12 +119,12 @@ namespace algorithm_practise
             }
         }
 
-        public static Node CreateLinkedList(int[] array)
+        public static LinkedListNode CreateLinkedList(int[] array)
         {
-            Node list = null;
+            LinkedListNode list = null;
             foreach (int i in array)
             {
-                list = new Node(i, list);
+                list = new LinkedListNode(i, list);
             }
 
             return list;
