@@ -64,8 +64,8 @@ namespace algorithm_practise
             BinarySearchTree tree = new BinarySearchTree(4); 
             tree.Left = new BinarySearchTree(3); 
             tree.Right = new BinarySearchTree(5);
-            // tree.Left.Left = new BinarySearchTree(2); 
-            // tree.Left.Right = new BinarySearchTree(6);
+            tree.Left.Left = new BinarySearchTree(2); 
+            tree.Left.Right = new BinarySearchTree(6);
 
             if (BinarySearchTree.IsBinarySearchTree(tree)) 
             { 
@@ -74,7 +74,11 @@ namespace algorithm_practise
             else
             { 
                 Console.WriteLine("Not a BST"); 
-            } 
+            }
+            
+            Console.WriteLine("\n--- Median of Two Sorted Array");
+            Console.WriteLine(MedianOfTwoSortedArray.FindMedianSortedArrays(new []{1, 3}, new[]{2}));
+
         }
     }
 }
