@@ -37,10 +37,10 @@ namespace algorithm_practise
 
             Console.WriteLine($"DFS => {graph.HasPathDfs(12, 13)}");
             Console.WriteLine($"BFS => {graph.HasPathBfs(12, 1)}");
-            
+
             Console.WriteLine("\n--- Brackets Matching");
             Console.WriteLine(BracketMatching.IsBalanced("{{{}}}"));
-            
+
             Console.WriteLine("\n--- Queue using two stacks");
             var queue = new MyQueue();
             Console.WriteLine("Inserting 1, 2, 3");
@@ -48,37 +48,39 @@ namespace algorithm_practise
             queue.EnQueue(2);
             queue.EnQueue(3);
             Console.WriteLine($"Dequeue => {queue.DeQueue()}");
-            
+
             Console.WriteLine("\n--- Array left rotation");
             ArrayLeftRotation.PrintArray(ArrayLeftRotation.LeftRotation(arr, 2));
-            
+
             Console.WriteLine("\n--- Ice cream Parlor Problem");
 
             foreach (var costIndices in HashAndMap.IceCreamParlorOn2(12, arr))
             {
                 Console.Write($"{costIndices}, ");
             }
-            
+
             Console.WriteLine("\n--- Binary Search Tree");
-            
-            BinarySearchTree tree = new BinarySearchTree(4); 
-            tree.Left = new BinarySearchTree(3); 
+
+            BinarySearchTree tree = new BinarySearchTree(4);
+            tree.Left = new BinarySearchTree(3);
             tree.Right = new BinarySearchTree(5);
-            tree.Left.Left = new BinarySearchTree(2); 
+            tree.Left.Left = new BinarySearchTree(2);
             tree.Left.Right = new BinarySearchTree(6);
 
-            if (BinarySearchTree.IsBinarySearchTree(tree)) 
-            { 
-                Console.WriteLine("IS BST"); 
-            } 
-            else
-            { 
-                Console.WriteLine("Not a BST"); 
+            if (BinarySearchTree.IsBinarySearchTree(tree))
+            {
+                Console.WriteLine("IS BST");
             }
-            
-            Console.WriteLine("\n--- Median of Two Sorted Array");
-            Console.WriteLine(MedianOfTwoSortedArray.FindMedianSortedArrays(new []{1, 3}, new[]{2}));
+            else
+            {
+                Console.WriteLine("Not a BST");
+            }
 
+            Console.WriteLine("\n--- Median of Two Sorted Array");
+            Console.WriteLine(LeetCodeProblems.FindMedianSortedArrays(new[] {1, 3}, new[] {2}));
+
+            Console.WriteLine("\n--- Smallest Missing Positive Integer in a Unsorted Array");
+            Console.WriteLine(LeetCodeProblems.FirstMissingPositive(new[] {3, 4, -1, 1}));
         }
     }
 }
