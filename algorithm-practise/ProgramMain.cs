@@ -81,6 +81,11 @@ namespace algorithm_practise
 
             Console.WriteLine("\n--- Smallest Missing Positive Integer in a Unsorted Array");
             Console.WriteLine(LeetCodeProblems.FirstMissingPositive(new[] {3, 4, -1, 1}));
+
+            Console.WriteLine("\n--- Most common word in a paragraph");
+            Console.WriteLine(LeetCodeProblems.GetMostCommonWord("Bob hit a ball, the hit BALL flew far after it was hit.", new[] { ""}));
+
+            Console.ReadKey();
         }
     }
 }
