@@ -83,7 +83,7 @@ namespace algorithm_practise
             Console.WriteLine(LeetCodeProblems.FirstMissingPositive(new[] {3, 4, -1, 1}));
 
             Console.WriteLine("\n--- Most common word in a paragraph");
-            Console.WriteLine(LeetCodeProblems.GetMostCommonWord("Bob hit a ball, the hit BALL flew far after it was hit.", new[] { ""}));
+            Console.WriteLine(LeetCodeProblems.GetMostCommonWord("Bob hit a ball, the hit BALL flew far after it was hit.", new[] { "hit"}));
 
             Console.ReadKey();
         }
