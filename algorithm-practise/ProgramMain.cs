@@ -85,6 +85,9 @@ namespace algorithm_practise
             Console.WriteLine("\n--- Most common word in a paragraph");
             Console.WriteLine(LeetCodeProblems.GetMostCommonWord("Bob hit a ball, the hit BALL flew far after it was hit.", new[] { "hit"}));
 
+            Console.WriteLine("\n--- Longest prefix in string arrays");
+            Console.WriteLine(LeetCodeProblems.GetLongestCommonPrefix(new[] { "flower", "flight", "flow" }));
+
             Console.ReadKey();
         }
     }
