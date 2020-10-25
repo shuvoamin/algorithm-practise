@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace algorithm_practise
 {
@@ -100,5 +101,50 @@ namespace algorithm_practise
 
             return pre;
         }
+
+        public static List<string> PopularNFeatures(
+            int numFeatures,
+            int topFeatures,
+            List<string> possibleFeatures,
+            int numFeatureRequests,
+            List<string> featureRequests
+        )
+        {
+            // WRITE YOUR CODE HERE
+            if (topFeatures > possibleFeatures.Count)
+                return featureRequests;
+
+            var popular = new Dictionary<string, int>();
+            var pFtr = possibleFeatures.Select(f => f.ToLower());
+
+            foreach (var req in featureRequests)
+            {
+                var words = req.Split(" ").Select(w => w);
+
+                foreach (var wd in words)
+                {
+                    var wdLower = wd.ToLower();
+                    if (pFtr.Contains(wdLower))
+                    {
+                        if (!popular.TryAdd(wdLower, 1))
+                        {
+                            popular[wdLower]++;
+                        }
+                    }
+                }
+            }
+
+            popular.OrderByDescending(p => p.Value).Take(topFeatures);
+
+            return new List<string>(popular.Keys);
+        }
+
+        // Given a list of N unique integers, construct a BST by inserting each integer in the given order without rebalacning the tree. Then
+        // find the distance between the two given nodes, node 1 and node 2, of the BST. In case, either node 1 or node 2 is not present in the
+        // tree, return 1.
+        // 6, [5, 6, 3, 1, 2, 4], 2, 4
+        // output : 3
+        // path traversal node1 to node 2 is 2, 1, 3 and 4, so output is 3
+        // public static int bstDistance(int num, List<int> values, int node1, int node2) { }
     }
 }

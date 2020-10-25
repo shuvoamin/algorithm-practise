@@ -2,6 +2,7 @@
 // and second smallest elements 
 
 using System;
+using System.Collections.Generic;
 using static algorithm_practise.ReverseLinkedList;
 using static algorithm_practise.SecondSmallestNumber;
 
@@ -87,6 +88,19 @@ namespace algorithm_practise
 
             Console.WriteLine("\n--- Longest prefix in string arrays");
             Console.WriteLine(LeetCodeProblems.GetLongestCommonPrefix(new[] { "flower", "flight", "flow" }));
+
+            Console.WriteLine("\n--- Popular feature requested by users");
+            var result = LeetCodeProblems.PopularNFeatures(
+                5, 
+                2,
+                new List<string> { "anacell", "betacellular", "flow" }, 
+                3,
+                new List<string> { "Best Services provided by anacell", "betacellular has greate services", "anacell provides much better services than all other" }
+            );
+            foreach (var item in result)
+            {
+                Console.WriteLine(item.ToString());
+            }
 
             Console.ReadKey();
         }
