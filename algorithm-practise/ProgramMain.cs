@@ -12,7 +12,20 @@ namespace algorithm_practise
     {
         public static void Main()
         {
-            int[] arr = {12, 13, 1, 10, 34, 11};
+            int[] arr = { 12, 13, 1, 10, 34, 11 };
+
+            //Console.WriteLine("--FIND LONGEST OCCURRED DIAGRAM");
+            //Console.WriteLine(LeetCodeProblems.FindLongestDiagram("codility"));
+
+            //Console.WriteLine("--FIND LONGEST POSSIBLE DIVERSE STRING");
+            //Console.WriteLine(LeetCodeProblems.FindLongestPossibleDiverseString(6, 1, 1));
+
+            Console.WriteLine("--FIND HAS PAIRS IN ARRAY");
+            Console.WriteLine(LeetCodeProblems.HasPairsInArray(new int[] { 1, 2, 2, 1 }));
+
+            Console.WriteLine("--FIND SMALLEST MISSING INTEGER");
+            var smallestMissingInt = LeetCodeProblems.FindSmallestIntegerInArray(new int[] { -1, -3});
+            Console.WriteLine(smallestMissingInt);
 
             Print2Smallest(arr);
 
@@ -78,22 +91,22 @@ namespace algorithm_practise
             }
 
             Console.WriteLine("\n--- Median of Two Sorted Array");
-            Console.WriteLine(LeetCodeProblems.FindMedianSortedArrays(new[] {1, 3}, new[] {2}));
+            Console.WriteLine(LeetCodeProblems.FindMedianSortedArrays(new[] { 1, 3 }, new[] { 2 }));
 
             Console.WriteLine("\n--- Smallest Missing Positive Integer in a Unsorted Array");
-            Console.WriteLine(LeetCodeProblems.FirstMissingPositive(new[] {3, 4, -1, 1}));
+            Console.WriteLine(LeetCodeProblems.FirstMissingPositive(new[] { 3, 4, -1, 1 }));
 
             Console.WriteLine("\n--- Most common word in a paragraph");
-            Console.WriteLine(LeetCodeProblems.GetMostCommonWord("Bob hit a ball, the hit BALL flew far after it was hit.", new[] { "hit"}));
+            Console.WriteLine(LeetCodeProblems.GetMostCommonWord("Bob hit a ball, the hit BALL flew far after it was hit.", new[] { "hit" }));
 
             Console.WriteLine("\n--- Longest prefix in string arrays");
             Console.WriteLine(LeetCodeProblems.GetLongestCommonPrefix(new[] { "flower", "flight", "flow" }));
 
             Console.WriteLine("\n--- Popular feature requested by users");
             var result = LeetCodeProblems.PopularNFeatures(
-                5, 
+                5,
                 2,
-                new List<string> { "anacell", "betacellular", "flow" }, 
+                new List<string> { "anacell", "betacellular", "flow" },
                 3,
                 new List<string> { "Best Services provided by anacell", "betacellular has greate services", "anacell provides much better services than all other" }
             );
