@@ -115,6 +115,10 @@ namespace algorithm_practise
                 Console.WriteLine(item.ToString());
             }
 
+            // TODO :: fix binary search
+            //Console.WriteLine("\n--- Binary Search in an Array");
+            //Console.WriteLine(BinarySearchTree.BinarySearchIterative(arr, 13));
+
             Console.ReadKey();
         }
     }

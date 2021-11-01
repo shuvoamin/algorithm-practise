@@ -93,6 +93,57 @@ namespace algorithm_practise
             return IsBinarySearchTree(root, prev);
         }
 
+        public static bool BinarySearchIterative(int[] array, int valueToFind)
+        {
+            int left = 0;
+            int right = array.Length - 1;
+
+            while(left <= right)
+            {
+                int mid = (left + right) / 2;
+                if (array[mid] == valueToFind)
+                {
+                    return true;
+                }
+                else if (valueToFind < array[mid])
+                {
+                    right = mid - 1;
+                }
+                else
+                {
+                    left = mid + 1;
+                }
+            }
+
+            return false;
+        }
+
+        public static bool BinarySearchRecursive(int[] array, int valueToFind)
+        {
+            return BinarySearchRecursive(array, valueToFind, 0, array.Length - 1);
+        }
+
+        private static bool BinarySearchRecursive(int[] array, int valueToFind, int left, int right)
+        {
+            if (left > right)
+                return false;
+
+            int mid = (left + right) / 2;
+
+            if (array[mid] == valueToFind)
+            {
+                return true;
+            }
+            else if (valueToFind < array[mid])
+            {
+                return BinarySearchRecursive(array, valueToFind, left, mid - 1);
+            }
+            else
+            {
+                return BinarySearchRecursive(array, valueToFind, mid + 1, right);
+            }
+        }
+
         private static bool IsBinarySearchTree(BinarySearchTree root, int prev)
         {
             // traverse the tree in in-order fashion and 
