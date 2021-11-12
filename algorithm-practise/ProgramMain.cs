@@ -94,6 +94,7 @@ namespace algorithm_practise
             Console.WriteLine(LeetCodeProblems.FindMedianSortedArrays(new[] { 1, 3 }, new[] { 2 }));
 
             Console.WriteLine("\n--- Smallest Missing Positive Integer in a Unsorted Array");
+
             Console.WriteLine(LeetCodeProblems.FirstMissingPositive(new[] { 3, 4, -1, 1 }));
 
             Console.WriteLine("\n--- Most common word in a paragraph");
@@ -120,6 +121,11 @@ namespace algorithm_practise
             //Console.WriteLine(BinarySearchTree.BinarySearchIterative(arr, 13));
 
             Console.ReadKey();
+
+            Console.WriteLine(LeetCodeProblems.FirstMissingPositive(new[] {1000, -1}));
+
+            Console.WriteLine("\n--- Are two arrays equal");
+            Console.WriteLine(LeetCodeProblems.AreTheyEqual(new[] { 1, 2, 3, 5 }, new[] { 1, 4, 3, 2 }));
         }
     }
 }

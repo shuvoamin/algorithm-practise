@@ -273,5 +273,20 @@ namespace algorithm_practise
         // output : 3
         // path traversal node1 to node 2 is 2, 1, 3 and 4, so output is 3
         // public static int bstDistance(int num, List<int> values, int node1, int node2) { }
+
+        public static bool AreTheyEqual(int[] arr_a, int[] arr_b)
+        {
+            // Write your code here
+            Array.Sort(arr_a);
+            Array.Sort(arr_b);
+
+            for (int i = 0; i < arr_a.Length; i++)
+            {
+                if (arr_a[i] != arr_b[i])
+                    return false;
+            }
+
+            return true;
+        }
     }
 }
