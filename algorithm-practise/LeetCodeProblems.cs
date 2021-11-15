@@ -304,5 +304,19 @@ namespace algorithm_practise
 
             return totalPairs;
         }
+
+        // Facebook 15 Nov 2021 Interview Q-1 => check a given string is number or not? isNumber(string input)
+
+        /* Facebook 15 Nov 2021 Interview Q-2 => a mouse moving in a maze and trying to find a cheese findCheese(Mouse mouse, int x, int y)
+           Helper function-1 available mouse.hasCheese() => returns true if cheese found from a location
+           Helper fucntion-2 available mouse.move(UP || DOWN || LEFT || RIGHT) => move the mouse to given direction
+            ______ 
+           | M    |
+           |  _   |
+           |  C|  |
+           |___|__|
+           
+        */
+
     }
 }
