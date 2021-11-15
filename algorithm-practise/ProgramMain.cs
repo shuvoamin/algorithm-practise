@@ -120,12 +120,15 @@ namespace algorithm_practise
             //Console.WriteLine("\n--- Binary Search in an Array");
             //Console.WriteLine(BinarySearchTree.BinarySearchIterative(arr, 13));
 
-            Console.ReadKey();
-
             Console.WriteLine(LeetCodeProblems.FirstMissingPositive(new[] {1000, -1}));
 
             Console.WriteLine("\n--- Are two arrays equal");
             Console.WriteLine(LeetCodeProblems.AreTheyEqual(new[] { 1, 2, 3, 5 }, new[] { 1, 4, 3, 2 }));
+
+            Console.WriteLine("\n--- Number of Pair Sums");
+            Console.WriteLine(LeetCodeProblems.NumberOfPairs(new[] { 1, 2, 3, 4, 3 }, 6));
+
+            Console.ReadKey();
         }
     }
 }

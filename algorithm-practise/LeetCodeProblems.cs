@@ -288,5 +288,21 @@ namespace algorithm_practise
 
             return true;
         }
+
+        public static int NumberOfPairs(int[] arr, int k)
+        {
+            int totalPairs = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for(int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[i] + arr[j] == k)
+                        totalPairs++;
+                }
+            }
+
+            return totalPairs;
+        }
     }
 }
